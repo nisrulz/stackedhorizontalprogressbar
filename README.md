@@ -19,15 +19,15 @@ I created the StackedHorizontalProgressBar as a library project.
      ```
 3. Reference in code as below
     ```java
-    int primary_pts = 4;
-    int secondary_pts = 3;
+    int primary_pts = 3;
+    int secondary_pts =6;
     int max = 10;
 
     StackedHorizontalProgressBar stackedHorizontalProgressBar;
     stackedHorizontalProgressBar = (StackedHorizontalProgressBar) findViewById(R.id.stackedhorizontalprogressbar);
     stackedHorizontalProgressBar.setMax(max);
     stackedHorizontalProgressBar.setProgress(primary_pts);
-    stackedHorizontalProgressBar.setSecondaryProgress(primary_pts + secondary_pts);
+    stackedHorizontalProgressBar.setSecondaryProgress(secondary_pts);
     
     ```
 
