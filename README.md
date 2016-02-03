@@ -38,3 +38,8 @@ folder
 + Upload to maven central
 + write a proper writeup of usage
 + refactor code to simplify the integraton
+
+
+# License
+
+ <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>
