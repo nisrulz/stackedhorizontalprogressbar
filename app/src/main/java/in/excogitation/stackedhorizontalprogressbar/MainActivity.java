@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import in.excogitation.lib.StackedHorizontalProgressBar;
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
