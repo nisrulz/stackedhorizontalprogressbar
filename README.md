@@ -3,9 +3,16 @@
 This is a result of me trying to find a way to have a progressbar show two values. Hence 
 I created the StackedHorizontalProgressBar as a library project.
 
-# How To
-1. As of now just import the lib module in android studio
-2. Put the StackedHorizontalProgressBar element in your layout 
+
+# Integration
+- StackedHorizontalProgressBar is available in the MavenCentral, so getting it as simple as adding it as a dependency
+```gradle
+compile 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.0'
+```
+
+# Usage
+
+1. Put the StackedHorizontalProgressBar element in your layout 
     ```xml
     
      <in.excogitation.lib.StackedHorizontalProgressBar
@@ -17,7 +24,7 @@ I created the StackedHorizontalProgressBar as a library project.
             android:progressDrawable="@drawable/stacked_horizontal_progress"/>
             
      ```
-3. Reference in code as below
+2. Reference in code as below
     ```java
     int primary_pts = 3;
     int secondary_pts =6;
@@ -31,15 +38,22 @@ I created the StackedHorizontalProgressBar as a library project.
     
     ```
 
-4. If you wish to edit the colors, just edit the `colors.xml` file under the libs > `values` 
+3. If you wish to edit the colors, just edit the `colors.xml` file under the libs > `values` 
 folder
 
-## Todo
-+ Upload to maven central
-+ write a proper writeup of usage
-+ refactor code to simplify the integraton
+License
+=======
 
+    Copyright 2016 Nishant Srivastava
 
-# License
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
- <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License 2.0</a>
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

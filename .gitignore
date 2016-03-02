@@ -17,6 +17,7 @@ gen/
 .gradle/
 build/
 /*/build/
+.gradletasknamecache
 
 # Local configuration file (sdk path, etc)
 local.properties
