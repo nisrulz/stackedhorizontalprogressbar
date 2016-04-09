@@ -7,7 +7,7 @@ I created the StackedHorizontalProgressBar as a library project.
 # Integration
 - StackedHorizontalProgressBar is available in the MavenCentral, so getting it as simple as adding it as a dependency
 ```gradle
-compile 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.0'
+compile 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.1'
 ```
 
 # Usage
@@ -15,13 +15,13 @@ compile 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.0'
 1. Put the StackedHorizontalProgressBar element in your layout 
     ```xml
     
-     <in.excogitation.lib.StackedHorizontalProgressBar
-            android:id="@+id/stackedhorizontalprogressbar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:progressDrawable="@drawable/stacked_horizontal_progress"/>
+     <github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar
+             android:id="@+id/stackedhorizontalprogressbar"
+             style="?android:attr/progressBarStyleHorizontal"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_margin="5dp"
+             android:progressDrawable="@drawable/stacked_horizontal_progress"/>
             
      ```
 2. Reference in code as below

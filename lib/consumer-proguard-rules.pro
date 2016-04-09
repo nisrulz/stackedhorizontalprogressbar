@@ -1,4 +1,4 @@
 # Consumer Proguard Rules
 
--keep class in.excogitation.lib.* { *; }
--keep class in.excogitation.lib.*$* { *; }
+-keep class github.nisrulz.stackedhorizontalprogressbar.* { *; }
+-keep class github.nisrulz.stackedhorizontalprogressbar.*$* { *; }

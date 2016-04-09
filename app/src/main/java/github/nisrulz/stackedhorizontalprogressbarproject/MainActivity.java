@@ -1,9 +1,10 @@
-package in.excogitation.stackedhorizontalprogressbar;
+package github.nisrulz.stackedhorizontalprogressbarproject;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import in.excogitation.lib.StackedHorizontalProgressBar;
+import github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         int primary_pts = 3;
-        int secondary_pts =6;
+        int secondary_pts = 6;
         int max = 10;
 
         StackedHorizontalProgressBar stackedHorizontalProgressBar;

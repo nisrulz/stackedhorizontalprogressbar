@@ -1,4 +1,4 @@
-package in.excogitation.lib;
+package github.nisrulz.stackedhorizontalprogressbar;
 
 import android.content.Context;
 import android.graphics.Color;
