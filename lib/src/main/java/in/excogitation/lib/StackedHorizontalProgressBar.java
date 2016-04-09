@@ -8,8 +8,6 @@ import android.widget.ProgressBar;
 
 /**
  * @author Nishant Srivastava
- * @company Excogitation
- * @date 03/Feb/2016
  */
 public class StackedHorizontalProgressBar extends ProgressBar {
     private Paint paint;
