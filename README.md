@@ -39,7 +39,7 @@ compile 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.1'
     ```
 
 3. If you wish to edit the colors, just edit the `colors.xml` file under the `res` > `values` 
-folder
+folder and add the below colors (modify the values as per your requirement)
 
     ```xml
     <!-- Stacked Horizontal Progressbar Colors -->
