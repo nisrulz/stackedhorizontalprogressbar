@@ -41,12 +41,11 @@ compile 'com.github.nisrulz:stackedhorizontalprogressbar:1.0.1'
 3. If you wish to edit the colors, just edit the `colors.xml` file under the `res` > `values` 
 folder
 
-```xml
-
+    ```xml
     <!-- Stacked Horizontal Progressbar Colors -->
     <color name="shpbr_primary_progress">#3F51B5</color>
     <color name="shpbr_secondary_progress">#FF4081</color>
-```
+    ```
 
 License
 =======
