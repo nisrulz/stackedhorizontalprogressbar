@@ -1,4 +1,4 @@
-# StackedHorizontalProgressBar
+# StackedHorizontalProgressBar    [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/stackedhorizontalprogressbar/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/stackedhorizontalprogressbar) 
 
 This is a result of me trying to find a way to have a progressbar show two values. Hence 
 I created the StackedHorizontalProgressBar as a library project.
