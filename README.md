@@ -2,6 +2,8 @@
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/stackedhorizontalprogressbar/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/stackedhorizontalprogressbar) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StackedHorizontalProgressBar-green.svg?style=true)](https://android-arsenal.com/details/1/3554)
 
+[![Twitter](https://img.shields.io/badge/Twitter-@nisrulz-blue.svg?style=flat)](http://twitter.com/nisrulz)
+
 This is a result of me trying to find a way to have a progressbar show two values. Hence 
 I created the StackedHorizontalProgressBar as a library project.
 
