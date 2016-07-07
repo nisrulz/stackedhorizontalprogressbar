@@ -5,7 +5,7 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/stackedhorizontalprogressbar/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.nisrulz/stackedhorizontalprogressbar) 
 
 ### Featured in
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StackedHorizontalProgressBar-green.svg?style=true)](https://android-arsenal.com/details/1/3554)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StackedHorizontalProgressBar-green.svg?style=true)](https://android-arsenal.com/details/1/3554) [![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23101-blue.svg)](https://www.androiddevdigest.com/digest-101/)
 
 ### Show some :heart:
 [![GitHub stars](https://img.shields.io/github/stars/nisrulz/stackedhorizontalprogressbar.svg?style=social&label=Star)](https://github.com/nisrulz/stackedhorizontalprogressbar) [![GitHub forks](https://img.shields.io/github/forks/nisrulz/stackedhorizontalprogressbar.svg?style=social&label=Fork)](https://github.com/nisrulz/stackedhorizontalprogressbar/fork) [![GitHub watchers](https://img.shields.io/github/watchers/nisrulz/stackedhorizontalprogressbar.svg?style=social&label=Watch)](https://github.com/nisrulz/stackedhorizontalprogressbar) [![GitHub followers](https://img.shields.io/github/followers/nisrulz.svg?style=social&label=Follow)](https://github.com/nisrulz)  
