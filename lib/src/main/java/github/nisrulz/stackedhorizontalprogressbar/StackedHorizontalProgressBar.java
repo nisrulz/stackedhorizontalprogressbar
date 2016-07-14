@@ -28,18 +28,12 @@ public class StackedHorizontalProgressBar extends ProgressBar {
 
   public StackedHorizontalProgressBar(Context context) {
     super(context);
-    paint = new Paint();
-    paint.setColor(Color.BLACK);
-    primary_progress = 0;
-    max_value = 100;
+    init();
   }
 
   public StackedHorizontalProgressBar(Context context, AttributeSet attrs) {
     super(context, attrs);
-    paint = new Paint();
-    paint.setColor(Color.BLACK);
-    primary_progress = 0;
-    max_value = 100;
+    init();
   }
 
   @Override public synchronized void setMax(int max) {
@@ -60,5 +54,12 @@ public class StackedHorizontalProgressBar extends ProgressBar {
       secondaryProgress = (max_value - primary_progress);
     }
     super.setSecondaryProgress(primary_progress + secondaryProgress);
+  }
+
+  private void init() {
+    paint = new Paint();
+    paint.setColor(Color.BLACK);
+    primary_progress = 0;
+    max_value = 100;
   }
 }
