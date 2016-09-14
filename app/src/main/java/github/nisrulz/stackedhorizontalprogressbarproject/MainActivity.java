@@ -17,23 +17,56 @@
 package github.nisrulz.stackedhorizontalprogressbarproject;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
+  final int primary_pts = 50;
+  int secondary_pts = 30;
+  int max = 100;
+
+  int countPrimary = 0;
+  int countSecondary = 0;
+  StackedHorizontalProgressBar stackedHorizontalProgressBar;
+  Handler handlerPrimaryProgress, handlerSecondaryProgress;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    int primary_pts = 3;
-    int secondary_pts = 6;
-    int max = 10;
 
-    StackedHorizontalProgressBar stackedHorizontalProgressBar;
     stackedHorizontalProgressBar =
         (StackedHorizontalProgressBar) findViewById(R.id.stackedhorizontalprogressbar);
     stackedHorizontalProgressBar.setMax(max);
-    stackedHorizontalProgressBar.setProgress(primary_pts);
-    stackedHorizontalProgressBar.setSecondaryProgress(secondary_pts);
+
+    handlerPrimaryProgress = new Handler();
+    handlerSecondaryProgress = new Handler();
+
+    handlerPrimaryProgress.post(runnablePrimary);
+    handlerSecondaryProgress.post(runnableSecondary);
   }
+
+  Runnable runnablePrimary = new Runnable() {
+    @Override
+    public void run() {
+      if (countPrimary < primary_pts) {
+        stackedHorizontalProgressBar.setProgress(countPrimary);
+        handlerPrimaryProgress.postDelayed(runnablePrimary, 50);
+        countPrimary++;
+      }
+    }
+  };
+
+  Runnable runnableSecondary = new Runnable() {
+    @Override
+    public void run() {
+      if (countSecondary < secondary_pts) {
+        stackedHorizontalProgressBar.setSecondaryProgress(countPrimary);
+        handlerSecondaryProgress.postDelayed(runnableSecondary, 50);
+        countSecondary++;
+      }
+    }
+  };
 }
