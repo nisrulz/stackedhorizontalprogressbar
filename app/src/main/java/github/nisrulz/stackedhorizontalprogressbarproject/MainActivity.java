@@ -19,18 +19,24 @@ package github.nisrulz.stackedhorizontalprogressbarproject;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
   final int primary_pts = 50;
-  int secondary_pts = 30;
+  int secondary_pts = 40;
   int max = 100;
 
   int countPrimary = 0;
   int countSecondary = 0;
   StackedHorizontalProgressBar stackedHorizontalProgressBar;
   Handler handlerPrimaryProgress, handlerSecondaryProgress;
+
+  TextView txt_primary, txt_secondary;
+  Button btn_reload;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,30 @@ public class MainActivity extends AppCompatActivity {
     stackedHorizontalProgressBar =
         (StackedHorizontalProgressBar) findViewById(R.id.stackedhorizontalprogressbar);
     stackedHorizontalProgressBar.setMax(max);
+
+    txt_primary = (TextView) findViewById(R.id.txt_primary);
+    txt_secondary = (TextView) findViewById(R.id.txt_secondary);
+
+    btn_reload = (Button) findViewById(R.id.btn_reload);
+    btn_reload.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+
+        handlerPrimaryProgress.removeCallbacks(runnablePrimary);
+        handlerSecondaryProgress.removeCallbacks(runnableSecondary);
+
+        countPrimary = 0;
+        stackedHorizontalProgressBar.setProgress(countPrimary);
+        txt_primary.setText("Primary Value\n" + countPrimary + "%");
+
+        countSecondary = 0;
+        stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
+        txt_secondary.setText("Secondary Value\n" + countSecondary + "%");
+
+        handlerPrimaryProgress.post(runnablePrimary);
+        handlerSecondaryProgress.post(runnableSecondary);
+      }
+    });
 
     handlerPrimaryProgress = new Handler();
     handlerSecondaryProgress = new Handler();
@@ -51,8 +81,9 @@ public class MainActivity extends AppCompatActivity {
   Runnable runnablePrimary = new Runnable() {
     @Override
     public void run() {
-      if (countPrimary < primary_pts) {
+      if (countPrimary <= primary_pts) {
         stackedHorizontalProgressBar.setProgress(countPrimary);
+        txt_primary.setText("Primary Value\n" + countPrimary + "%");
         handlerPrimaryProgress.postDelayed(runnablePrimary, 50);
         countPrimary++;
       }
@@ -62,8 +93,9 @@ public class MainActivity extends AppCompatActivity {
   Runnable runnableSecondary = new Runnable() {
     @Override
     public void run() {
-      if (countSecondary < secondary_pts) {
-        stackedHorizontalProgressBar.setSecondaryProgress(countPrimary);
+      if (countSecondary <= secondary_pts) {
+        stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
+        txt_secondary.setText("Secondary Value\n" + countSecondary + "%");
         handlerSecondaryProgress.postDelayed(runnableSecondary, 50);
         countSecondary++;
       }
