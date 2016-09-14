@@ -16,7 +16,6 @@
   -->
 
 <LinearLayout
-    android:gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,7 +32,6 @@
       android:id="@+id/stackedhorizontalprogressbar"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_margin="5dp"
       android:progressDrawable="@drawable/stacked_horizontal_progress"
       style="?android:attr/progressBarStyleHorizontal"
       />
@@ -43,17 +41,17 @@
       android:id="@+id/txt_primary"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:gravity="center"
-      android:textSize="50sp"
-      tools:text="Primary Value\n70%"
+      android:gravity="left"
+      android:textSize="25sp"
+      tools:text="Primary Value : 70%"
       />
   <TextView
       android:id="@+id/txt_secondary"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:gravity="center"
-      android:textSize="50sp"
-      tools:text="Secondary Value\n50%"
+      android:gravity="left"
+      android:textSize="25sp"
+      tools:text="Secondary Value : 50%"
       />
   <Button
       android:id="@+id/btn_reload"

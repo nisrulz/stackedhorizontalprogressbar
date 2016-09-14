@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
         countPrimary = 0;
         stackedHorizontalProgressBar.setProgress(countPrimary);
-        txt_primary.setText("Primary Value\n" + countPrimary + "%");
+        txt_primary.setText("Primary Value : " + countPrimary + "%");
 
         countSecondary = 0;
         stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
-        txt_secondary.setText("Secondary Value\n" + countSecondary + "%");
+        txt_secondary.setText("Secondary Value : " + countSecondary + "%");
 
         handlerPrimaryProgress.post(runnablePrimary);
         handlerSecondaryProgress.post(runnableSecondary);
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void run() {
       if (countPrimary <= primary_pts) {
         stackedHorizontalProgressBar.setProgress(countPrimary);
-        txt_primary.setText("Primary Value\n" + countPrimary + "%");
+        txt_primary.setText("Primary Value : " + countPrimary + "%");
         handlerPrimaryProgress.postDelayed(runnablePrimary, 50);
         countPrimary++;
       }
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     public void run() {
       if (countSecondary <= secondary_pts) {
         stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
-        txt_secondary.setText("Secondary Value\n" + countSecondary + "%");
+        txt_secondary.setText("Secondary Value : " + countSecondary + "%");
         handlerSecondaryProgress.postDelayed(runnableSecondary, 50);
         countSecondary++;
       }
