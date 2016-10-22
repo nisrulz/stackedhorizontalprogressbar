@@ -24,7 +24,7 @@ android {
     minSdkVersion 9
     targetSdkVersion 25
     versionCode 4
-    versionName "1.0.3"
+    versionName VERSION_NAME
     consumerProguardFiles 'consumer-proguard-rules.pro'
   }
   buildTypes {
@@ -40,9 +40,13 @@ dependencies {
   testCompile 'junit:junit:4.12'
 }
 
+
+
 // Bintray info
 def LIB_MODULE_NAME = 'stackedhorizontalprogressbar'
 def LIB_MODULE_DESC = 'Android library to implement stacked horizontal progressbar'
+def GITHUB_LINK = "https://github.com/nisrulz/stackedhorizontalprogressbar"
+def GITHUB_REPO = "nisrulz/stackedhorizontalprogressbar"
 
 ext {
   bintrayRepo = 'maven'
@@ -55,9 +59,9 @@ ext {
   libraryDescription = LIB_MODULE_DESC
 
   // Your github repo link
-  siteUrl = POM_URL
-  gitUrl = POM_GIT_URL
-  githubRepository = LIB_GITHUB_REPO
+  siteUrl = GITHUB_LINK
+  gitUrl = GITHUB_LINK + ".git"
+  githubRepository = GITHUB_REPO
 
   libraryVersion = VERSION_NAME
 
