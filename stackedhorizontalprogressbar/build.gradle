@@ -17,25 +17,59 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+  compileSdkVersion 25
+  buildToolsVersion "25.0.0"
 
-    defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 25
-        versionCode 4
-        versionName "1.0.3"
-        consumerProguardFiles 'consumer-proguard-rules.pro'
+  defaultConfig {
+    minSdkVersion 9
+    targetSdkVersion 25
+    versionCode 4
+    versionName "1.0.3"
+    consumerProguardFiles 'consumer-proguard-rules.pro'
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+  }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  testCompile 'junit:junit:4.12'
 }
+
+// Bintray info
+def LIB_MODULE_NAME = 'stackedhorizontalprogressbar'
+def LIB_MODULE_DESC = 'Android library to implement stacked horizontal progressbar'
+
+ext {
+  bintrayRepo = 'maven'
+  bintrayName = 'com.github.nisrulz:stackedhorizontalprogressbar'
+
+  publishedGroupId = GROUP
+  libraryName = LIB_MODULE_NAME
+  artifact = LIB_MODULE_NAME // Has to be same as your library module name
+
+  libraryDescription = LIB_MODULE_DESC
+
+  // Your github repo link
+  siteUrl = POM_URL
+  gitUrl = POM_GIT_URL
+  githubRepository = LIB_GITHUB_REPO
+
+  libraryVersion = VERSION_NAME
+
+  developerId = POM_DEVELOPER_ID
+  developerName = POM_DEVELOPER_NAME
+  developerEmail = POM_DEVELOPER_EMAILID
+
+  licenseName = POM_LICENCE_NAME
+  licenseUrl = POM_LICENCE_URL
+  allLicenses = [POM_ALL_LICENCES]
+}
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
