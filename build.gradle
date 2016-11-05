@@ -41,3 +41,19 @@ allprojects {
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
+
+ext {
+  //Other
+  supportLibVersion = '25.0.0'
+
+  // Lib info
+  libVersionCode = 4
+  libVersionName = '1.0.3'
+  libPomUrl = 'https://github.com/nisrulz/stackedhorizontalprogressbar'
+  libGithubRepo = 'nisrulz/stackedhorizontalprogressbar'
+
+
+  libModuleName = 'stackedhorizontalprogressbar'
+  libModuleDesc = 'Android library to implement stacked horizontal progressbar'
+  libBintrayName = 'com.github.nisrulz:stackedhorizontalprogressbar'
+}
