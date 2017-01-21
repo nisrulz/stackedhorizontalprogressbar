@@ -1,5 +1,4 @@
-# StackedHorizontalProgressBar    
-
+# StackedHorizontalProgressBar
 
 ### Specs
 [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/_latestVersion)
