@@ -38,28 +38,28 @@
 
 
   <TextView
-      android:padding="10dp"
       android:id="@+id/txt_primary"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:gravity="left"
+      android:padding="10dp"
       android:textSize="25sp"
       tools:text="Primary Value : 70%"
       />
   <TextView
-      android:padding="10dp"
       android:id="@+id/txt_secondary"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:gravity="left"
+      android:padding="10dp"
       android:textSize="25sp"
       tools:text="Secondary Value : 50%"
       />
   <Button
-      android:padding="10dp"
       android:id="@+id/btn_reload"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:padding="10dp"
       android:text="Reload"
       />
 </LinearLayout>

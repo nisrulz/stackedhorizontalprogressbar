@@ -37,6 +37,28 @@ public class MainActivity extends AppCompatActivity {
 
   TextView txt_primary, txt_secondary;
   Button btn_reload;
+  Runnable runnablePrimary = new Runnable() {
+    @Override
+    public void run() {
+      if (countPrimary <= primary_pts) {
+        stackedHorizontalProgressBar.setProgress(countPrimary);
+        txt_primary.setText("Primary Value : " + countPrimary + "%");
+        handlerPrimaryProgress.postDelayed(runnablePrimary, 50);
+        countPrimary++;
+      }
+    }
+  };
+  Runnable runnableSecondary = new Runnable() {
+    @Override
+    public void run() {
+      if (countSecondary <= secondary_pts) {
+        stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
+        txt_secondary.setText("Secondary Value : " + countSecondary + "%");
+        handlerSecondaryProgress.postDelayed(runnableSecondary, 50);
+        countSecondary++;
+      }
+    }
+  };
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -77,28 +99,4 @@ public class MainActivity extends AppCompatActivity {
     handlerPrimaryProgress.post(runnablePrimary);
     handlerSecondaryProgress.post(runnableSecondary);
   }
-
-  Runnable runnablePrimary = new Runnable() {
-    @Override
-    public void run() {
-      if (countPrimary <= primary_pts) {
-        stackedHorizontalProgressBar.setProgress(countPrimary);
-        txt_primary.setText("Primary Value : " + countPrimary + "%");
-        handlerPrimaryProgress.postDelayed(runnablePrimary, 50);
-        countPrimary++;
-      }
-    }
-  };
-
-  Runnable runnableSecondary = new Runnable() {
-    @Override
-    public void run() {
-      if (countSecondary <= secondary_pts) {
-        stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
-        txt_secondary.setText("Secondary Value : " + countSecondary + "%");
-        handlerSecondaryProgress.postDelayed(runnableSecondary, 50);
-        countSecondary++;
-      }
-    }
-  };
 }

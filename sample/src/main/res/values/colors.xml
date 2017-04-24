@@ -16,12 +16,12 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
 
 
-    <!-- Stacked Horizontal Progressbar Colors -->
-    <color name="shpbr_primary_progress">#3F51B5</color>
-    <color name="shpbr_secondary_progress">#FF4081</color>
+  <!-- Stacked Horizontal Progressbar Colors -->
+  <color name="shpbr_primary_progress">#3F51B5</color>
+  <color name="shpbr_secondary_progress">#FF4081</color>
 </resources>
