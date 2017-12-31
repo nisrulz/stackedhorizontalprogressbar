@@ -20,7 +20,7 @@ Android library with ability to show two progress indicators in one horizontal p
 # Including in your project
 StackedHorizontalProgressBar is available in the Jcenter, so getting it as simple as adding it as a dependency
 ```gradle
-compile 'com.github.nisrulz:stackedhorizontalprogressbar:{latest version}'
+implementation 'com.github.nisrulz:stackedhorizontalprogressbar:{latest version}'
 ```
 where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/_latestVersion)
 
