@@ -26,77 +26,85 @@ import github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
-  final int primary_pts = 50;
-  int secondary_pts = 40;
-  int max = 100;
+    Button btn_reload;
 
-  int countPrimary = 0;
-  int countSecondary = 0;
-  StackedHorizontalProgressBar stackedHorizontalProgressBar;
-  Handler handlerPrimaryProgress, handlerSecondaryProgress;
+    int countPrimary = 0;
 
-  TextView txt_primary, txt_secondary;
-  Button btn_reload;
-  Runnable runnablePrimary = new Runnable() {
+    int countSecondary = 0;
+
+    Handler handlerPrimaryProgress, handlerSecondaryProgress;
+
+    int max = 100;
+
+    final int primary_pts = 50;
+
+    int secondary_pts = 40;
+
+    StackedHorizontalProgressBar stackedHorizontalProgressBar;
+
+    Runnable runnableSecondary = new Runnable() {
+        @Override
+        public void run() {
+            if (countSecondary <= secondary_pts) {
+                stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
+                txt_secondary.setText("Secondary Value : " + countSecondary + "%");
+                handlerSecondaryProgress.postDelayed(runnableSecondary, 50);
+                countSecondary++;
+            }
+        }
+    };
+
+    TextView txt_primary, txt_secondary;
+
+    Runnable runnablePrimary = new Runnable() {
+        @Override
+        public void run() {
+            if (countPrimary <= primary_pts) {
+                stackedHorizontalProgressBar.setProgress(countPrimary);
+                txt_primary.setText("Primary Value : " + countPrimary + "%");
+                handlerPrimaryProgress.postDelayed(runnablePrimary, 50);
+                countPrimary++;
+            }
+        }
+    };
+
     @Override
-    public void run() {
-      if (countPrimary <= primary_pts) {
-        stackedHorizontalProgressBar.setProgress(countPrimary);
-        txt_primary.setText("Primary Value : " + countPrimary + "%");
-        handlerPrimaryProgress.postDelayed(runnablePrimary, 50);
-        countPrimary++;
-      }
-    }
-  };
-  Runnable runnableSecondary = new Runnable() {
-    @Override
-    public void run() {
-      if (countSecondary <= secondary_pts) {
-        stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
-        txt_secondary.setText("Secondary Value : " + countSecondary + "%");
-        handlerSecondaryProgress.postDelayed(runnableSecondary, 50);
-        countSecondary++;
-      }
-    }
-  };
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+        stackedHorizontalProgressBar =
+                (StackedHorizontalProgressBar) findViewById(R.id.stackedhorizontalprogressbar);
+        stackedHorizontalProgressBar.setMax(max);
 
-    stackedHorizontalProgressBar =
-        (StackedHorizontalProgressBar) findViewById(R.id.stackedhorizontalprogressbar);
-    stackedHorizontalProgressBar.setMax(max);
+        txt_primary = (TextView) findViewById(R.id.txt_primary);
+        txt_secondary = (TextView) findViewById(R.id.txt_secondary);
 
-    txt_primary = (TextView) findViewById(R.id.txt_primary);
-    txt_secondary = (TextView) findViewById(R.id.txt_secondary);
+        btn_reload = (Button) findViewById(R.id.btn_reload);
+        btn_reload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-    btn_reload = (Button) findViewById(R.id.btn_reload);
-    btn_reload.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
+                handlerPrimaryProgress.removeCallbacks(runnablePrimary);
+                handlerSecondaryProgress.removeCallbacks(runnableSecondary);
 
-        handlerPrimaryProgress.removeCallbacks(runnablePrimary);
-        handlerSecondaryProgress.removeCallbacks(runnableSecondary);
+                countPrimary = 0;
+                stackedHorizontalProgressBar.setProgress(countPrimary);
+                txt_primary.setText("Primary Value : " + countPrimary + "%");
 
-        countPrimary = 0;
-        stackedHorizontalProgressBar.setProgress(countPrimary);
-        txt_primary.setText("Primary Value : " + countPrimary + "%");
+                countSecondary = 0;
+                stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
+                txt_secondary.setText("Secondary Value : " + countSecondary + "%");
 
-        countSecondary = 0;
-        stackedHorizontalProgressBar.setSecondaryProgress(countSecondary);
-        txt_secondary.setText("Secondary Value : " + countSecondary + "%");
+                handlerPrimaryProgress.post(runnablePrimary);
+                handlerSecondaryProgress.post(runnableSecondary);
+            }
+        });
+
+        handlerPrimaryProgress = new Handler();
+        handlerSecondaryProgress = new Handler();
 
         handlerPrimaryProgress.post(runnablePrimary);
         handlerSecondaryProgress.post(runnableSecondary);
-      }
-    });
-
-    handlerPrimaryProgress = new Handler();
-    handlerSecondaryProgress = new Handler();
-
-    handlerPrimaryProgress.post(runnablePrimary);
-    handlerSecondaryProgress.post(runnableSecondary);
-  }
+    }
 }

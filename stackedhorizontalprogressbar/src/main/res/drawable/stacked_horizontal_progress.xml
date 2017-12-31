@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2016 Nishant Srivastava
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,27 +16,27 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-  <item android:id="@android:id/background">
-    <shape>
-      <corners android:radius="2dip"/>
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="2dip" />
 
-      <solid android:color="@android:color/secondary_text_light"/>
-    </shape>
-  </item>
-  <item android:id="@android:id/secondaryProgress">
-    <clip>
-      <shape>
-        <corners android:radius="2dip"/>
-        <solid android:color="@color/shpbr_secondary_progress"/>
-      </shape>
-    </clip>
-  </item>
-  <item android:id="@android:id/progress">
-    <clip>
-      <shape>
-        <corners android:radius="2dip"/>
-        <solid android:color="@color/shpbr_primary_progress"/>
-      </shape>
-    </clip>
-  </item>
+            <solid android:color="@android:color/secondary_text_light" />
+        </shape>
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <corners android:radius="2dip" />
+                <solid android:color="@color/shpbr_secondary_progress" />
+            </shape>
+        </clip>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="2dip" />
+                <solid android:color="@color/shpbr_primary_progress" />
+            </shape>
+        </clip>
+    </item>
 </layer-list>
