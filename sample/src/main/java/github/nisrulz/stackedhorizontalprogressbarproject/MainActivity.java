@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Nishant Srivastava
+ * Copyright © 2016 Nishant Srivastava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,33 +16,38 @@
 
 package github.nisrulz.stackedhorizontalprogressbarproject;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_reload;
+    private Button btn_reload;
 
-    int countPrimary = 0;
+    private int countPrimary = 0;
 
-    int countSecondary = 0;
+    private int countSecondary = 0;
 
-    Handler handlerPrimaryProgress, handlerSecondaryProgress;
+    private Handler handlerPrimaryProgress;
+    private Handler handlerSecondaryProgress;
 
-    int max = 100;
+    private final int max = 100;
 
-    final int primary_pts = 50;
+    private final int primary_pts = 50;
 
-    int secondary_pts = 40;
+    private final int secondary_pts = 40;
 
-    StackedHorizontalProgressBar stackedHorizontalProgressBar;
+    private StackedHorizontalProgressBar stackedHorizontalProgressBar;
 
-    Runnable runnableSecondary = new Runnable() {
+    private final Runnable runnableSecondary = new Runnable() {
+        @SuppressLint("SetTextI18n")
         @Override
         public void run() {
             if (countSecondary <= secondary_pts) {
@@ -54,9 +59,10 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    TextView txt_primary, txt_secondary;
+    private TextView txt_primary;
+    private TextView txt_secondary;
 
-    Runnable runnablePrimary = new Runnable() {
+    private final Runnable runnablePrimary = new Runnable() {
         @Override
         public void run() {
             if (countPrimary <= primary_pts) {
@@ -74,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         stackedHorizontalProgressBar =
-                (StackedHorizontalProgressBar) findViewById(R.id.stackedhorizontalprogressbar);
+                findViewById(R.id.stackedhorizontalprogressbar);
         stackedHorizontalProgressBar.setMax(max);
 
-        txt_primary = (TextView) findViewById(R.id.txt_primary);
-        txt_secondary = (TextView) findViewById(R.id.txt_secondary);
+        txt_primary = findViewById(R.id.txt_primary);
+        txt_secondary = findViewById(R.id.txt_secondary);
 
-        btn_reload = (Button) findViewById(R.id.btn_reload);
+        btn_reload = findViewById(R.id.btn_reload);
         btn_reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
