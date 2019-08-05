@@ -15,17 +15,18 @@
  */
 
 apply plugin: 'com.android.application'
+apply from: '../dependencies.gradle'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    
+    compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         applicationId "github.nisrulz.stackedhorizontalprogressbarproject"
-        versionCode 1
-        versionName "1.0"
+        versionCode versions.appVersionCode
+        versionName versions.appVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -33,11 +34,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        textOutput "stdout"
+        textReport true
+        checkAllWarnings true
+        warningsAsErrors true
+        showAll true
+        explainIssues true
+        abortOnError false
+        lintConfig file("$projectDir/lint.xml")
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation supportLibs
+    testImplementation unitTestLibs
+    androidTestImplementation androidTestsLibs
+
     implementation project(':stackedhorizontalprogressbar')
 }
