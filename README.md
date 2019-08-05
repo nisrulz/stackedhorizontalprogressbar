@@ -15,7 +15,7 @@ Android library with ability to show two progress indicators in one horizontal p
 
 >This is a result of me trying to find a way to have a progressbar show two values. Hence I created the StackedHorizontalProgressBar as a library project.
 
-![Walkthrough](https://github.com/nisrulz/stackedhorizontalprogressbar/blob/develop/img/walkthrough-cropped.gif)
+![Walkthrough](img/walkthrough-cropped.gif)
 
 # Including in your project
 StackedHorizontalProgressBar is available in the Jcenter, so getting it as simple as adding it as a dependency
