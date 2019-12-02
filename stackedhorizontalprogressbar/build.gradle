@@ -15,8 +15,9 @@
  */
 
 apply plugin: 'com.android.library'
-apply from: '../dependencies.gradle'
-apply from: '../libconfig.gradle'
+
+apply from: "$rootProject.projectDir/dependencies.gradle"
+apply from: "$rootProject.projectDir/libconfig.gradle"
 
 android {
     compileSdkVersion versions.compileSdk
