@@ -18,11 +18,13 @@ package github.nisrulz.stackedhorizontalprogressbarproject
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import github.nisrulz.stackedhorizontalprogressbarproject.databinding.ActivityMainBinding
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     private var countPrimary = 10
     private var countSecondary = 0
@@ -32,20 +34,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        stackedHorizontalProgressBar.max = max
+        binding.apply {
+            stackedHorizontalProgressBar.max = max
 
-        btnReload.setOnClickListener {
-            countPrimary = 0
-            stackedHorizontalProgressBar.progress = countPrimary
-            txtViewPrimary.text = "Primary Value : $countPrimary%"
+            btnReload.setOnClickListener {
+                countPrimary = 0
+                setPrimaryText()
 
-            countSecondary = 0
-            stackedHorizontalProgressBar.secondaryProgress = countSecondary
-            txtViewSecondary.text = "Secondary Value : $countSecondary%"
-
-            updateValuesWithDelay()
+                countSecondary = 0
+                setSecondaryText()
+                updateValuesWithDelay()
+            }
         }
 
         // Update on load
@@ -64,17 +67,31 @@ class MainActivity : AppCompatActivity() {
         }, 0, 100, TimeUnit.MILLISECONDS)
     }
 
-    private fun updateValues() {
-        if (countSecondary <= secondaryPts) {
-            stackedHorizontalProgressBar.secondaryProgress = countSecondary
-            txtViewSecondary.text = "Secondary Value : $countSecondary%"
-            countSecondary++
-        }
 
-        if (countPrimary <= primaryPts) {
-            stackedHorizontalProgressBar.progress = countPrimary
-            txtViewPrimary.text = "Primary Value : $countPrimary%"
-            countPrimary++
+    fun setPrimaryText() {
+        binding.stackedHorizontalProgressBar.progress = countPrimary
+        binding.txtViewPrimary.text = getString(R.string.primary_value, countPrimary)
+
+    }
+
+    fun setSecondaryText() {
+        binding.stackedHorizontalProgressBar.secondaryProgress = countSecondary
+        binding.txtViewSecondary.text = getString(R.string.secondary_value, countSecondary)
+
+    }
+
+
+    private fun updateValues() {
+        binding.apply {
+            if (countSecondary <= secondaryPts) {
+                setSecondaryText()
+                countSecondary++
+            }
+
+            if (countPrimary <= primaryPts) {
+                setPrimaryText()
+                countPrimary++
+            }
         }
     }
 }
