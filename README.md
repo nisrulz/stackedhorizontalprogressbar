@@ -2,7 +2,7 @@
 
 
 ### Specs
-[ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/_latestVersion)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.nisrulz/stackedhorizontalprogressbar.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.nisrulz%22%20AND%20a:%22stackedhorizontalprogressbar%22)
 
 ### Featured in
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StackedHorizontalProgressBar-green.svg?style=true)](https://android-arsenal.com/details/1/3554) [![AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23101-blue.svg)](https://www.androiddevdigest.com/digest-101/)
@@ -14,16 +14,14 @@
 
 Android library with ability to show two progress indicators in one horizontal progress bar.
 
->This is a result of me trying to find a way to have a progressbar show two values. Hence I created the StackedHorizontalProgressBar as a library project.
-
-![Walkthrough](https://github.com/nisrulz/stackedhorizontalprogressbar/blob/develop/img/walkthrough-cropped.gif)
+![Walkthrough](img/walkthrough-cropped.gif)
 
 # Including in your project
 StackedHorizontalProgressBar is available in the Jcenter, so getting it as simple as adding it as a dependency
 ```gradle
 compile 'com.github.nisrulz:stackedhorizontalprogressbar:{latest version}'
 ```
-where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Astackedhorizontalprogressbar/_latestVersion)
+where `{latest version}` corresponds to published version in [![Maven Central](https://img.shields.io/maven-central/v/com.github.nisrulz/stackedhorizontalprogressbar.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.nisrulz%22%20AND%20a:%22stackedhorizontalprogressbar%22)
 
 ### Usage
 
