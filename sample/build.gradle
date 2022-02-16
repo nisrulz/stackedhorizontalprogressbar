@@ -17,57 +17,50 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
-apply from: "$rootProject.projectDir/dependencies.gradle"
-
 android {
-    compileSdkVersion versions.compileSdk
+    compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "github.nisrulz.stackedhorizontalprogressbarproject"
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        applicationId "com.github.nisrulz.stackedhorizontalprogressbarproject"
 
-        versionCode versions.appVersionCode
-        versionName versions.appVersionName
+        versionCode 1
+        versionName '1.0.0'
 
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
+        vectorDrawables.useSupportLibrary = true
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
     buildFeatures {
         viewBinding true
     }
-
-    compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
-    }
-
-    lintOptions {
-        textOutput "stdout"
-        textReport true
-        checkAllWarnings true
-        warningsAsErrors true
-        showAll true
-        explainIssues true
-        abortOnError false
-        lintConfig file("$projectDir/lint.xml")
-    }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation kotlin
+    implementation "androidx.appcompat:appcompat:$appCompat"
+    implementation "androidx.annotation:annotation:$annotation"
 
-    implementation supportLibs
-    testImplementation unitTestLibs
-    androidTestImplementation androidTestsLibs
-
+    // Include as module
+    // Uncomment when developing
     implementation project(':stackedhorizontalprogressbar')
+
+    // Include as maven artifact
+    // Use with mavenLocal to test publication
+    // Or use with MavenCentral after publication
+    // implementation "com.github.nisrulz:stackedhorizontalprogressbar:$libVersionName"
 }

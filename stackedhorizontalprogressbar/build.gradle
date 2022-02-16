@@ -15,45 +15,29 @@
  */
 
 apply plugin: 'com.android.library'
-
-apply from: "$rootProject.projectDir/dependencies.gradle"
-apply from: "$rootProject.projectDir/libconfig.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: "com.vanniktech.maven.publish"
 
 android {
-    compileSdkVersion versions.compileSdk
+    compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
-        versionCode libConfig.versionCode
-        versionName libConfig.versionName
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
 
+        versionCode rootProject.ext.libVersionCode
+        versionName rootProject.ext.libVersionName
         consumerProguardFiles 'consumer-proguard-rules.pro'
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    lintOptions {
-        textOutput "stdout"
-        textReport true
-        checkAllWarnings true
-        warningsAsErrors true
-        showAll true
-        explainIssues true
-        abortOnError false
-        lintConfig file("$projectDir/lint.xml")
-    }
 }
-
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation unitTestLibs
-}
-
-apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/v2/publish-config.gradle'
