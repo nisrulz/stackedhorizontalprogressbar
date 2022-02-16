@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             setContentView(root)
-            stackedHorizontalProgressBar.max = max
 
+            stackedHorizontalProgressBar.max = max
             btnReload.setOnClickListener {
                 countPrimary = 0
                 setPrimaryText()
@@ -67,16 +67,18 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun setPrimaryText() {
-        binding.stackedHorizontalProgressBar.progress = countPrimary
-        binding.txtViewPrimary.text = getString(R.string.primary_value, countPrimary)
-
+    private fun setPrimaryText() {
+        binding.apply {
+            stackedHorizontalProgressBar.progress = countPrimary
+            txtViewPrimary.text = getString(R.string.primary_value, countPrimary)
+        }
     }
 
-    fun setSecondaryText() {
-        binding.stackedHorizontalProgressBar.secondaryProgress = countSecondary
-        binding.txtViewSecondary.text = getString(R.string.secondary_value, countSecondary)
-
+    private fun setSecondaryText() {
+        binding.apply {
+            stackedHorizontalProgressBar.secondaryProgress = countSecondary
+            txtViewSecondary.text = getString(R.string.secondary_value, countSecondary)
+        }
     }
 
 

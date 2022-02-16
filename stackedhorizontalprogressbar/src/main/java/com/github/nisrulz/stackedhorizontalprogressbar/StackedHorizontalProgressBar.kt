@@ -21,17 +21,18 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.widget.ProgressBar
 
-class StackedHorizontalProgressBar : ProgressBar {
+class StackedHorizontalProgressBar @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+) : ProgressBar(context, attrs, defStyleAttr) {
+
     private var primaryProgress = 0
     private var maxValue = 0
     private val paint: Paint by lazy { Paint() }
 
-    constructor(context: Context?) : super(context) {
-        init()
-    }
-
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
-        init()
+    init {
+        paint.color = Color.BLACK
+        primaryProgress = 0
+        maxValue = 100
     }
 
     override fun setMax(max: Int) {
@@ -54,11 +55,5 @@ class StackedHorizontalProgressBar : ProgressBar {
             secondaryProgressValue = maxValue - primaryProgress
         }
         super.setSecondaryProgress(primaryProgress + secondaryProgressValue)
-    }
-
-    private fun init() {
-        paint.color = Color.BLACK
-        primaryProgress = 0
-        maxValue = 100
     }
 }
