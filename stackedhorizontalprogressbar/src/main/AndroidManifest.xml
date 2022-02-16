@@ -14,8 +14,4 @@
   ~ limitations under the License.
   -->
 
-<manifest package="github.nisrulz.stackedhorizontalprogressbar">
-
-    <application/>
-
-</manifest>
+<manifest package="com.github.nisrulz.stackedhorizontalprogressbar" />

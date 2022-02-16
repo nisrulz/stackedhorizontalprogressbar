@@ -14,17 +14,15 @@
  * limitations under the License.
  */
 
-package github.nisrulz.stackedhorizontalprogressbarproject
+package com.github.nisrulz.shprogressbarproject
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import github.nisrulz.stackedhorizontalprogressbarproject.databinding.ActivityMainBinding
+import com.github.nisrulz.shprogressbarproject.databinding.ActivityMainBinding
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
 
     private var countPrimary = 10
     private var countSecondary = 0
@@ -32,13 +30,14 @@ class MainActivity : AppCompatActivity() {
     private val primaryPts = 50
     private val secondaryPts = 40
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
 
         binding.apply {
+            setContentView(root)
             stackedHorizontalProgressBar.max = max
 
             btnReload.setOnClickListener {

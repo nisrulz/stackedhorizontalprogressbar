@@ -27,7 +27,7 @@ where `{latest version}` corresponds to published version in [![Maven Central](h
 1. Put the StackedHorizontalProgressBar element in your layout 
     ```xml
     
-     <github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar
+     <com.github.nisrulz.stackedhorizontalprogressbar.StackedHorizontalProgressBar
              android:id="@+id/stackedhorizontalprogressbar"
              style="?android:attr/progressBarStyleHorizontal"
              android:layout_width="match_parent"
