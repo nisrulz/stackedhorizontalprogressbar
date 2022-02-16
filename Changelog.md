@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0 [17 Feb 2022]
+## 1.1.0 [16 Feb 2022]
 
 - ✅  Switched to Kotlin
 - 🧹  Updated project
