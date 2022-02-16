@@ -50,6 +50,6 @@ ext {
     compileSdkVersion = targetSdkVersion
 
     // Library Info
-    libVersionCode = 6
-    libVersionName = '2.0.0'
+    libVersionCode = 7
+    libVersionName = '1.1.0'
 }
