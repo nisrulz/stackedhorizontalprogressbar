@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2016 Nishant Srivastava
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,24 +18,24 @@
 
     <item android:id="@android:id/background">
         <shape>
-            <corners android:radius="2dip"/>
+            <corners android:radius="2dip" />
 
-            <solid android:color="@android:color/secondary_text_light"/>
+            <solid android:color="@android:color/secondary_text_light" />
         </shape>
     </item>
     <item android:id="@android:id/secondaryProgress">
         <clip>
             <shape>
-                <corners android:radius="2dip"/>
-                <solid android:color="@color/shpbr_secondary_progress"/>
+                <corners android:radius="2dip" />
+                <solid android:color="@color/shpbr_secondary_progress" />
             </shape>
         </clip>
     </item>
     <item android:id="@android:id/progress">
         <clip>
             <shape>
-                <corners android:radius="2dip"/>
-                <solid android:color="@color/shpbr_primary_progress"/>
+                <corners android:radius="2dip" />
+                <solid android:color="@color/shpbr_primary_progress" />
             </shape>
         </clip>
     </item>

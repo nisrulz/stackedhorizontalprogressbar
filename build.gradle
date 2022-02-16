@@ -17,43 +17,39 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:2.2.2'
 
-    // NOTE: Do not place your application dependencies here; they belong
-    // in the individual module build.gradle files
+    repositories {
+        google()
+        mavenCentral()
+    }
 
-    // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
-    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-  }
-}
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
 
-allprojects {
-  repositories {
-    jcenter()
-  }
+        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
 }
 
 task clean(type: Delete) {
-  delete rootProject.buildDir
+    delete rootProject.buildDir
 }
 
 ext {
-  //Other
-  supportLibVersion = '25.0.0'
+    // Deps
+    appCompat = "1.4.1"
+    annotation = "1.3.0"
+    lifecycle = "2.4.1"
 
-  // Lib info
-  libVersionCode = 4
-  libVersionName = '1.0.3'
-  libPomUrl = 'https://github.com/nisrulz/stackedhorizontalprogressbar'
-  libGithubRepo = 'nisrulz/stackedhorizontalprogressbar'
+    //Other
+    targetSdkVersion = 32
+    minSdkVersion = 14
+    compileSdkVersion = targetSdkVersion
 
-
-  libModuleName = 'stackedhorizontalprogressbar'
-  libModuleDesc = 'Android library to implement stacked horizontal progressbar'
-  libBintrayName = 'com.github.nisrulz:stackedhorizontalprogressbar'
+    // Library Info
+    libVersionCode = 7
+    libVersionName = '1.1.0'
 }

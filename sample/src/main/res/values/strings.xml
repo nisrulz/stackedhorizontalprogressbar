@@ -16,4 +16,7 @@
 
 <resources>
     <string name="app_name">StackedHorizontalProgressBar</string>
+    <string name="reload">Reload</string>
+    <string name="primary_value">Primary Value : %1$d</string>
+    <string name="secondary_value">Secondary Value : %1$d</string>
 </resources>
